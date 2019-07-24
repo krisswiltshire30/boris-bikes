@@ -7,7 +7,5 @@ class Bike
   def working?
     @working
   end
-
-  def is_docked?
-  end
+  
 end
