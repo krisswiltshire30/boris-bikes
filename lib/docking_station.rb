@@ -9,13 +9,13 @@ class DockingStation
   end
 
   def dock(bike)
-    fail "Station at full capacity, can't dock bike" if @bikes
+    fail "Station at full capacity, can't dock bike" if @bikes.length == 20
     @bikes << bike
   end
 
   def release_bike
-    fail 'No bike available' unless @bikes
-    @bikes
+    fail 'No bike available' if @bikes.empty?
+    @bikes.first
   end
 
 end
