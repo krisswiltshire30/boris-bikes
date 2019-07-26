@@ -41,4 +41,24 @@ describe DockingStation do
     end
   end
 
+  describe 'Set capacity when create new docking station, default to DEFAULT_CAPACITY' do
+
+
+    it 'capacity set to default when no argument is given' do
+      docking_station = DockingStation.new()
+      DockingStation::DEFAULT_CAPACITY.times { docking_station.dock(Bike.new)}
+      expect{docking_station.dock(Bike.new)}.to raise_error
+    end
+
+
+    
+    it 'capacity set to 5' do
+      docking_station = DockingStation.new(5)
+      5.times { docking_station.dock(Bike.new)}
+      expect{docking_station.dock(Bike.new)}.to raise_error
+    end
+
+
+  end
+
 end
