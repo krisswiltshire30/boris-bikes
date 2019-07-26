@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require './lib/docking_station'
 require './lib/bike'
 
@@ -33,12 +31,12 @@ describe DockingStation do
   end
 
   # it { is_expected.to respond_to :full? }
-  # 
+  #
   # it { is_expected.to respond_to :empty? }
 
   describe '#dock' do
     it 'raises an error when a bike is already docked' do
-      20.times {subject.dock(Bike.new)}
+      DockingStation::DEFAULT_CAPACITY.times {subject.dock(Bike.new)}
       expect { subject.dock(Bike.new) }.to raise_error "Station at full capacity, can't dock bike"
     end
   end
