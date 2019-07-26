@@ -32,6 +32,10 @@ describe DockingStation do
     end
   end
 
+  # it { is_expected.to respond_to :full? }
+  # 
+  # it { is_expected.to respond_to :empty? }
+
   describe '#dock' do
     it 'raises an error when a bike is already docked' do
       20.times {subject.dock(Bike.new)}
